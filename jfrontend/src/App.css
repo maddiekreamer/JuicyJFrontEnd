@@ -11,3 +11,27 @@
 .Footer-small {
   color: #FFFFFF
 }
+
+#Header-img{
+    width:50%;
+    height:auto;
+}
+
+.Header-head{
+    margin-top:20px;
+    text-align: center;
+}
+
+#Header-search{
+    text-align: center;
+    padding-top:60px;
+}
+
+#Header-input{
+    border: 2px solid #02B488;
+    border-radius: 4px
+}
+
+#Header-container{
+    padding: 0px;
+}
