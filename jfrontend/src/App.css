@@ -1,0 +1,15 @@
+
+/* Footer */
+
+.Footer {
+  background-color: #02B488;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.Footer-small {
+  color: #FFFFFF
+}
