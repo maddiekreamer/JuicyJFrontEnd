@@ -22,6 +22,14 @@
     padding: 0px;
 }
 
+.Main-nav {
+    background: #02B488;
+    color: #FFFFFF;
+}
+.Main-nav-link {
+    color: #FFFFFF;
+}
+
 .Footer {
   background-color: #02B488;
   position: fixed;
