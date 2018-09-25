@@ -42,3 +42,8 @@
 .Footer-small {
   color: #FFFFFF
 }
+
+#image{
+    height: 300px;
+    width:100%;
+}
