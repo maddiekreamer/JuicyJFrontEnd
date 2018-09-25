@@ -1,0 +1,51 @@
+import React, {Component} from "react";
+import { Nav, NavItem, NavLink, Container, Row, Col} from 'reactstrap';
+// import Card from "./component/Card";
+
+class Main extends Component {
+
+  // createCard = (props.data.map((list, i) => {
+  //     return (
+  //       <Card list={list} key={i}/>
+  //     )
+  //   })
+  // )
+
+
+  render() {
+    return (
+      <main>
+          <Container>
+            <Row>
+              <Col sm="3" className="Main-nav">
+                <Nav vertical >
+                  <p>Product Categories</p>
+                  <NavItem>
+                    <NavLink className="Main-nav-link" href="#">Snacks</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="Main-nav-link" href="#">Drinks</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="Main-nav-link" href="#">Specials</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink className="Main-nav-link" href="#">Contact</NavLink>
+                  </NavItem>
+                </Nav>
+              </Col>
+              <Col sm="9" className="bg-warning">
+                <Container>
+                  <Row>
+                    {this.createCard}
+                  </Row>
+                </Container>
+              </Col>
+            </Row>
+          </Container>
+      </main>
+    )
+  }
+}
+
+export default Main;
