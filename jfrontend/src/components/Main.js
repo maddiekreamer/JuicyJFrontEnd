@@ -18,7 +18,7 @@ class Main extends Component {
           <Container>
             <Row>
               <Col sm="3" className="Main-nav">
-                <Nav vertical >
+                <Nav vertical className="text-center">
                   <p>Product Categories</p>
                   <NavItem>
                     <NavLink className="Main-nav-link" href="#">Snacks</NavLink>
