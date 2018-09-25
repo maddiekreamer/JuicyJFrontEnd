@@ -1,18 +1,16 @@
 import React, {Component} from "react";
 import { Nav, NavItem, NavLink, Container, Row, Col} from 'reactstrap';
-import Card from "./Cards";
+import Cards from "./Cards";
 
-class Main extends Component {
+function Main(props) {
 
-  createCard = (this.props.data.map((list, i) => {
+  const createCard = props.data.map((list, i) => {
+    console.log('message',props.data)
       return (
-        <Card list={list} key={i}/>
+        <Cards list={list} key={i}/>
       )
     })
-  )
-
-
-  render() {
+  
     return (
       <main>
           <Container>
@@ -37,7 +35,7 @@ class Main extends Component {
               <Col sm="9" className="bg-warning">
                 <Container>
                   <Row>
-                    {this.createCard}
+                    {createCard}
                   </Row>
                 </Container>
               </Col>
@@ -46,6 +44,6 @@ class Main extends Component {
       </main>
     )
   }
-}
+
 
 export default Main;

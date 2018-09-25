@@ -20,11 +20,12 @@ class App extends Component {
     fetch("https://j-j-data.herokuapp.com/") 
     .then(result => result.json())
     .then(result => this.setState({
-      data: result
+      data: result.data
     }))
   }
 
   render() {
+    console.log(this.state.data)
     return (
       <div className="App">
         <Header />
