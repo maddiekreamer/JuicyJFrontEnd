@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import { Nav, NavItem, NavLink, Container, Row, Col} from 'reactstrap';
-import Card from "./component/Card";
+import Cards from "./Cards";
 
 class Main extends Component {
 
-  createCard = (props.data.map((list, i) => {
+  createCard = (this.props.data.map((list, i) => {
       return (
-        <Card list={list} key={i}/>
+        <Cards list={list} key={i}/>
       )
     })
   )
