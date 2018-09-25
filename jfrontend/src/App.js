@@ -11,13 +11,13 @@ class App extends Component {
       data: []
     }
   }
-  
+
   componentDidMount() {
     this.getData()
   }  
 
     getData = () => {
-    fetch() 
+    fetch("https://j-j-data.herokuapp.com/") 
     .then(result => result.json())
     .then(result => this.setState({
       data: result
