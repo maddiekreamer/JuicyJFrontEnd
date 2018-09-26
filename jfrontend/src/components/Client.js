@@ -26,28 +26,31 @@ class Client extends Component {
     })
   }
 
-  getCorrectObject = () => {
-    // console.log("this.props.data", this.props.data)
+  // getCorrectObject = () => {
+  //   // console.log("this.props.data", this.props.data)
     
     
-    let correctObject = this.props.data.filter((type)  =>  {
-      console.log("ojbect being filtered", type)
-      return type.id === this.state.objectID
+  //   let correctObject = this.props.data.filter((type)  =>  {
+  //     console.log("ojbect being filtered", type)
+  //     return type.id === this.state.objectID
 
-    })
-    console.log("correctObject", correctObject)
+  //   })
+  //   console.log("correctObject", correctObject)
 
 
 
-    return this.setState({selectedObject: correctObject})
-    console.log("selected object", this.state.selectedObject)
-  }
+  //   return this.setState({selectedObject: correctObject})
+  //   console.log("selected object", this.state.selectedObject)
+  // }
 
   
   change = (event) => {
     this.setState({objectID: event.target.options[event.target.selectedIndex].id})
-    this.getCorrectObject()
-    this.setState(this.state.selectedObject = this.props.data[this.state.objectID])
+    // this.getCorrectObject()
+    let wholeLongThing = event.target.options[event.target.selectedIndex].id
+    let num = wholeLongThing - 1
+    console.log("run it", num)
+    this.setState(this.state.selectedObject = this.props.data[num])
     console.log("selected object", this.state.selectedObject)
   
     
@@ -72,7 +75,7 @@ class Client extends Component {
           </select>  
           
         </form>      
-        <ClientForm productDetails={this.state.obj} />
+        <ClientForm productDetails={this.state.selectedObject} />
 
       </div>
     );
