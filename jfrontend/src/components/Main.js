@@ -1,9 +1,9 @@
-import React, {Component} from "react";
-import { Nav, NavItem, NavLink, Container, Button, ButtonGroup, Row, Col} from 'reactstrap';
+import React from "react";
+import {Container, Button, ButtonGroup, Row, Col} from 'reactstrap';
 import Cards from "./Cards";
 import Categories from "./Categories";
 
-function Main(props) {
+function Main(props)  {
 
   const createCard = props.data.map((list, i) => {
     return (
