@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import Client from "./components/Client";
 
 
 class App extends Component {
@@ -44,6 +45,7 @@ class App extends Component {
     }))
   }
 
+
   render() {
     console.log(this.state.data)
     console.log(this.state.categories)
@@ -55,6 +57,7 @@ class App extends Component {
               selectCategory={this.selectCategory}
               getData={this.getData} />
         <Footer />
+        <Client data={this.state.data}/>
       </div>
     );
   }
