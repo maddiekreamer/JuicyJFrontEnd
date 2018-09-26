@@ -5,6 +5,22 @@ import "../App.css";
 
 class Client extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      data: []
+    }
+  }
+
+  componentDidMount() {
+    return fetch("https://j-j-data.herokuapp.com/")
+    .then(response => response.json())
+    .then(result => {
+      this.setState({
+        data: result.data
+      })
+    })
+  }  
 
   render() {
     return (
@@ -28,13 +44,17 @@ class Client extends Component {
         <Form className="m-5">
           <h6>Add New Product</h6>
           <FormGroup row>
-            <Col sm="9">
+            <Col sm="8">
               <Label for="product" size="sm">Product</Label>
               <Input type="text" name="product" id="product" placeholder="Product" bsSize="sm"/>
             </Col>
-            <Col sm="3">
+            <Col sm="2">
               <Label for="quantity" size="sm">Quantity</Label>
               <Input type="number" name="quantity" id="quantity" placeholder="Quantity" bsSize="sm"/>
+            </Col>
+            <Col sm="2">
+              <Label for="category" size="sm">Category</Label>
+              <Input type="number" name="category" id="category" placeholder="Category" bsSize="sm"/>
             </Col>
           </FormGroup>
           <FormGroup row>
