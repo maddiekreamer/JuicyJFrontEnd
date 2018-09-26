@@ -1,6 +1,5 @@
 import React from "react";
-import SubmitButton from "./SubmitButton";
-import {Col, Form, FormGroup, Label, Input} from "reactstrap";
+import {Col, Form, FormGroup, Label, Input, Button} from "reactstrap";
 import "../App.css";
 
 const ClientForm = (props) => {
@@ -36,7 +35,15 @@ const ClientForm = (props) => {
           <Label for="description" size="sm">Description</Label>
           <Input type="textarea" name="description" id="description" bsSize="sm"/>
         </FormGroup>
-        <SubmitButton />
+        <Button size="sm">
+          Submit New Product
+        </Button>
+        <Button size="sm">
+          Update Product Info
+        </Button>
+        <Button size="sm">
+          Delete
+        </Button>
       </Form>
 
   )
