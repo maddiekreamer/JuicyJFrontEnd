@@ -20,14 +20,27 @@
 
 #Header-container{
     padding: 0px;
+    margin-bottom:15px;
 }
 
 .Main-nav {
     background: #02B488;
     color: #FFFFFF;
+    text-align: center;
 }
 .Main-nav-link {
     color: #FFFFFF;
+}
+
+#Nav-buttons {
+    background-color: #02B488;
+    border: 1px solid white;
+    border-radius: 7px;
+    margin: 10px;
+}
+
+.Main-buttons{
+    margin-top:50px;
 }
 
 .Footer {
@@ -43,9 +56,42 @@
   color: #FFFFFF
 }
 
-#image{
-    height: 300px;
-    width:100%;
+/* #logo-container{
+    background-image: url(./Images/JustJ.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+} */
+
+
+#button-size{
+    width:280px;
+    margin:0 auto;
+    margin-bottom: 5px;
+}
+
+#Card{
+    width:300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.406);
+    transition: 0.3s;
+}
+
+#Card:hover {
+    box-shadow: 0 8px 16px 0 rgba(43, 169, 79, 0.61);
+}
+
+#Card-image{
+    border: 1px solid white;
+    height:300px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px 0 rgba(192, 153, 24, 0.153);
+
+}
+
+img {
+    display: block;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
 }
 
 .Client-head {

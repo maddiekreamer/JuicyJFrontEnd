@@ -24,15 +24,15 @@ function Main(props)  {
           <Container>
             <Row>
               <Col sm="3" className="Main-nav">
-                <ButtonGroup vertical>
-                  <p>Product Categories</p>
+                <ButtonGroup vertical className="Main-buttons">
+                  <h3>Product Categories</h3>
                   {createCategories}
-                  <Button onClick={(event) => props.getData()}>All</Button>
-                  <Button>Contact</Button>
+                  <Button id="Nav-buttons" onClick={(event) => props.getData()}>All</Button>
+                  <Button id="Nav-buttons">Contact</Button>
                 </ButtonGroup>
               </Col>
-              <Col sm="9" className="bg-warning">
-                <Container>
+              <Col sm="9">
+                <Container id="logo-container">
                   <Row>
                     {createCard}
                   </Row>
