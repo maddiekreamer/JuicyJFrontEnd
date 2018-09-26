@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Col} from 'reactstrap';
+    CardTitle, Button, Col} from 'reactstrap';
 import "../"
 
 class Cards extends Component {
@@ -12,7 +12,6 @@ class Cards extends Component {
         
     }
     render() {
-        console.log(this.props.list)
         return (
             <Col md="4">
                     <Card>

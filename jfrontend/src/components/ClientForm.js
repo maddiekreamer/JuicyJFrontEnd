@@ -1,9 +1,9 @@
-import React, {Component} from "react";
+import React from "react";
 import SubmitButton from "./SubmitButton";
-import {Container, Row, Col, Button, Form, FormGroup, Label, Input} from "reactstrap";
+import {Col, Form, FormGroup, Label, Input} from "reactstrap";
 import "../App.css";
 
-const ClientForm = () => {
+const ClientForm = (props) => {
 
   return (
       <Form className="m-5">
