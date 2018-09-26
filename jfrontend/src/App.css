@@ -47,3 +47,18 @@
     height: 300px;
     width:100%;
 }
+
+.Client-head {
+    background-color: #02B488;
+    color: #FFFFFF;
+}
+.Client-img {
+    width: 40px;
+    height: auto;
+    padding: 5px;
+}
+
+.Client-logo {
+    width: 30%;
+    padding: 5px;
+}
