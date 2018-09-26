@@ -4,7 +4,6 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Client from "./components/Client";
 
-
 class App extends Component {
   constructor(props) {
     super(props)
