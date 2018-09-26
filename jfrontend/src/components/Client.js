@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText} from "reactstrap";
+import {Container, Row, Col, Button, Form, FormGroup, Label, Input} from "reactstrap";
 import "../App.css";
 
 
@@ -57,6 +57,11 @@ class Client extends Component {
         <section className="m-5">
           <h6>Current Inventory</h6>
           <ul>
+            <li>
+              Product Name
+              <button>Update</button>
+              <button>Delete</button>
+            </li>
 
           </ul>
         </section>
