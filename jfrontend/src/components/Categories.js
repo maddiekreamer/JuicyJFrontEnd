@@ -5,7 +5,7 @@ import "../"
 const Categories = (props) => {
 
     return(
-        <Button onClick={() => props.selectCategory(props.category.id)}>
+        <Button id="Nav-buttons" onClick={() => props.selectCategory(props.category.id)}>
             {props.category.type}
         </Button>
     )
