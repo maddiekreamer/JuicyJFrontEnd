@@ -56,9 +56,6 @@ class App extends Component {
   };
 
   render() {
-    {
-      console.log("this.props.auth", this.props.auth);
-    }
     let mainComponent = "";
     switch (this.props.location) {
       case "":
