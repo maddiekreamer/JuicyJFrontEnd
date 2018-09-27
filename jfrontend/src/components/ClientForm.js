@@ -12,22 +12,18 @@ class ClientForm extends Component {
       categoryID: "",
       image_URL: "",
       price: "",
-      description: "",
-      id: ""
-
+      description: ""
     }
   }
 
   onClick = (e) => {
-    console.log("this.props", this.props)
     this.setState({
       name: this.props.productDetails.name,
       quantity: this.props.productDetails.quantity,
       categoryID: this.props.productDetails.categoryID,
       image_URL: this.props.productDetails.image_URL,
       price: this.props.productDetails.price,
-      description: this.props.productDetails.description,
-      id: this.props.productDetails.id
+      description: this.props.productDetails.description
     })
  
   }
@@ -39,13 +35,11 @@ class ClientForm extends Component {
     this.setState({
       [name]: value   
     })
-    console.log("state ", this.state)
   }
 
   handleSubmitPost = (e) => {
     e.preventDefault();
     const body = JSON.stringify(this.state);
-    console.log("body ", body)
     fetch("https://j-j-data.herokuapp.com", {
       method: "POST",
       mode: "cors",
@@ -60,18 +54,14 @@ class ClientForm extends Component {
         categoryID: "",
         image_URL: "",
         price: "",
-        description: "",
-        id: ""
+        description: ""
       })
     )
   }
 
   handleDelete = (e) => {
     e.preventDefault();
-    // const body = JSON.stringify(this.state);
-    console.log("client for state id", this.state.id)
-    
-    fetch(`https://j-j-data.herokuapp.com/${this.state.id}`, {
+    fetch(`https://j-j-data.herokuapp.com/${this.props.productDetails.id}`, {
       method: "DELETE",
       mode: "cors",
       headers: { "content-type": "application/json" }
@@ -85,7 +75,6 @@ class ClientForm extends Component {
         image_URL: "",
         price: "",
         description: "",
-        id: ""
       })
     )
   }
@@ -93,8 +82,7 @@ class ClientForm extends Component {
   handleUpdate = (e) => {
     e.preventDefault();
     const body = JSON.stringify(this.state);
-    console.log("body ", body)
-    fetch(`https://j-j-data.herokuapp.com/${this.state.id}`, {
+    fetch(`https://j-j-data.herokuapp.com/${this.props.productDetails.id}`, {
       method: "PUT",
       mode: "cors",
       headers: { "content-type": "application/json" },
@@ -109,7 +97,6 @@ class ClientForm extends Component {
         image_URL: "",
         price: "",
         description: "",
-        id: ""
       })
     )
   }
@@ -148,10 +135,6 @@ class ClientForm extends Component {
             <Label for="description" size="sm">Description</Label>
             <Input type="textarea" name="description" id="description" bsSize="sm" ref="description" value={this.state.description} onChange={this.handleChange}/>
           </FormGroup>
-          <FormGroup>
-            <Label for="id" size="sm">id</Label>
-            <Input type="textarea" name="id" id="description" bsSize="sm" ref="id" value={this.state.id} onChange={this.handleChange}/>
-          </FormGroup>
           <Button onClick={this.handleSubmitPost}>
             Add New Product
           </Button>
@@ -161,9 +144,7 @@ class ClientForm extends Component {
           <Button onClick={this.handleUpdate}>
             Update Product Info
           </Button>
-
         </Form>
-
     )
   }
   

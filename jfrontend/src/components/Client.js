@@ -26,9 +26,7 @@ class Client extends Component {
   
   change = (event) => {
     let num = event.target.options[event.target.selectedIndex].index - 1
-    console.log("run it", num)
     this.setState(this.state.selectedObject = this.props.data[num])
-    console.log("selected object", this.state.selectedObject)  
   }
 
   render() {
