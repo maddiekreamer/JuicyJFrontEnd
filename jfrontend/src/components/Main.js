@@ -28,7 +28,8 @@ function Main(props)  {
                   <h3>Product Categories</h3>
                   {createCategories}
                   <Button id="Nav-buttons" onClick={(event) => props.getData()}>All</Button>
-                  <Button id="Nav-buttons">Contact</Button>
+                  <Button id="Nav-buttons" target="_blank" href="https://venmo.com/wjoey13">Payment Info</Button>
+                  <Button id="Nav-buttons" onClick={props.login}>Admin</Button>
                 </ButtonGroup>
               </Col>
               <Col sm="9">

@@ -40,7 +40,7 @@ class ClientForm extends Component {
   handleSubmitPost = (e) => {
     e.preventDefault();
     const body = JSON.stringify(this.state);
-    fetch("https://j-j-data.herokuapp.com", {
+    return fetch("https://j-j-data.herokuapp.com", {
       method: "POST",
       mode: "cors",
       headers: { "content-type": "application/json" },
@@ -62,7 +62,7 @@ class ClientForm extends Component {
 
   handleDelete = (e) => {
     e.preventDefault();
-    fetch(`https://j-j-data.herokuapp.com/${this.props.productDetails.id}`, {
+    return fetch(`https://j-j-data.herokuapp.com/${this.props.productDetails.id}`, {
       method: "DELETE",
       mode: "cors",
       headers: { "content-type": "application/json" }
@@ -84,7 +84,7 @@ class ClientForm extends Component {
   handleUpdate = (e) => {
     e.preventDefault();
     const body = JSON.stringify(this.state);
-    fetch(`https://j-j-data.herokuapp.com/${this.props.productDetails.id}`, {
+    return fetch(`https://j-j-data.herokuapp.com/${this.props.productDetails.id}`, {
       method: "PUT",
       mode: "cors",
       headers: { "content-type": "application/json" },

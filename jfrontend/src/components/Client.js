@@ -6,6 +6,7 @@ import ClientDropdown from "./ClientDropdown"
 
 
 
+
 class Client extends Component {
 
   constructor(props) {
@@ -17,9 +18,9 @@ class Client extends Component {
 }
   
   createSelectItems= () => {
-    return this.props.data.map((type, i) =>  {
+    return Array.isArray(this.props.data) && this.props.data.map((type, i) =>  {
       return  (
-        <option key={i}>
+        <option key={type.id}>
           {type.id} - {type.name}
         </option> 
       )
