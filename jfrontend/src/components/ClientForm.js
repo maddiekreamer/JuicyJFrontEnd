@@ -18,14 +18,16 @@ class ClientForm extends Component {
   }
 
   onClick = (e) => {
+    console.log("this.props", this.props)
     this.setState({
       name: this.props.productDetails.name,
       quantity: this.props.productDetails.quantity,
-      categoryID: this.props.productDetails.category,
+      categoryID: this.props.productDetails.categoryID,
       image_URL: this.props.productDetails.image_URL,
       price: this.props.productDetails.price,
       description: this.props.productDetails.description
-    }) 
+    })
+ 
   }
 
   handleChange = (e) => {
@@ -48,15 +50,24 @@ class ClientForm extends Component {
       headers: { "content-type": "application/json" },
       body: body
     })
-    .then(response => console.log(response));
-    e.target.reset();
+    .then(response => console.log(response))
+    .then(
+      this.setState({
+        name: "",
+        quantity: "",
+        categoryID: "",
+        image_URL: "",
+        price: "",
+        description: ""
+      })
+    )
   }
 
  
   render() {
 
     return (
-        <Form className="m-5" onSubmit={this.handleSubmitPost}>
+        <Form className="m-5">
           <h6>Add New Product</h6>
           <FormGroup row>
             <Button onClick={this.onClick}>Add Info</Button>
@@ -70,7 +81,7 @@ class ClientForm extends Component {
             </Col>
             <Col sm="2">
               <Label for="category" size="sm">Category</Label>
-              <Input type="number" name="categoryID" id="category" placeholder="Category" bsSize="sm" ref="category" value={this.state.category} onChange={this.handleChange}/>
+              <Input type="number" name="categoryID" id="category" placeholder="Category" bsSize="sm" ref="category" value={this.state.categoryID} onChange={this.handleChange}/>
             </Col>
           </FormGroup>
           <FormGroup row>
@@ -87,10 +98,10 @@ class ClientForm extends Component {
             <Label for="description" size="sm">Description</Label>
             <Input type="textarea" name="description" id="description" bsSize="sm" ref="description" value={this.state.description} onChange={this.handleChange}/>
           </FormGroup>
-          <Button >
+          <Button type="submit" onClick={this.handleSubmitPost}>
             Add New Product
           </Button>
-          <Button>
+          <Button onClick={this.handleSumbitPost}>
             Update Product Info
           </Button>
           <Button>

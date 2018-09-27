@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import ClientHeader from "./ClientHeader";
 import ClientForm from "./ClientForm";
-import {Form, FormGroup, Label, Input} from "reactstrap";
 import "../App.css";
 
 
@@ -10,8 +9,7 @@ class Client extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      objectID: [],
-      selectedObject: {},
+        selectedObject: {},
 
   }
 }
@@ -19,43 +17,18 @@ class Client extends Component {
   createSelectItems= () => {
     return this.props.data.map((type, i) =>  {
       return  (
-        <option key={i} id={type.id}>
-          {type.name}
+        <option key={i}>
+          {type.id} - {type.name}
         </option> 
       )
     })
   }
-
-  // getCorrectObject = () => {
-  //   // console.log("this.props.data", this.props.data)
-    
-    
-  //   let correctObject = this.props.data.filter((type)  =>  {
-  //     console.log("ojbect being filtered", type)
-  //     return type.id === this.state.objectID
-
-  //   })
-  //   console.log("correctObject", correctObject)
-
-
-
-  //   return this.setState({selectedObject: correctObject})
-  //   console.log("selected object", this.state.selectedObject)
-  // }
-
   
   change = (event) => {
-    this.setState({objectID: event.target.options[event.target.selectedIndex].id})
-    // this.getCorrectObject()
-    let wholeLongThing = event.target.options[event.target.selectedIndex].id
-    let num = wholeLongThing - 1
+    let num = event.target.options[event.target.selectedIndex].index - 1
     console.log("run it", num)
     this.setState(this.state.selectedObject = this.props.data[num])
-    console.log("selected object", this.state.selectedObject)
-  
-    
-    console.log("event.id", event.target.options[event.target.selectedIndex].id)
-    console.log("this.state.objectID", this.state.objectID)
+    console.log("selected object", this.state.selectedObject)  
   }
 
   render() {

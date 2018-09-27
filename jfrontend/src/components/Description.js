@@ -4,9 +4,6 @@ import {TweenMax,Power1,Elastic} from "gsap/TweenMax"
 
 class Description extends Component {
 
-    constructor(props){
-        super(props)
-    }
 
     componentDidMount(){
         let describe = document.getElementById(this.props.name)
