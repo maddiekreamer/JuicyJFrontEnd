@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Client from "./components/Client";
+import ClientForm from './components/ClientForm'
 
 class App extends Component {
   constructor(props) {
@@ -44,22 +45,37 @@ class App extends Component {
     }))
   }
 
-
   render() {
-    console.log(this.state.data)
-    console.log(this.state.categories)
-    return (
-      <div className="App">
-        <Header />
-        <Main data = {this.state.data}
-              categories={this.state.categories}
-              selectCategory={this.selectCategory}
-              getData={this.getData} />
-        <Footer />
-        <Client data={this.state.data}/>
-      </div>
+    {console.log('this.props.auth', this.props.auth)}
+    let mainComponent = "";
+    switch(this.props.location){
+      case "":
+        mainComponent = <div>
+          <Header />
+          <Main {...this.props} categories={this.state.categories} data={this.state.categories}/>;
+          <button onClick={this.props.auth.login}>Login</button>
+          <Footer />
+          </div>
+        break;
+      // case "callback":
+      //   mainComponent = <Client />;
+      //   break;
+      case "secret":
+        mainComponent = this.props.auth.isAuthenticated() ? <ClientForm {...this.props} categories={this.state.categories} data={this.state.categories} /> : <ClientForm/>
+        break;
+      default:
+        mainComponent = <ClientForm />;
+      
+    }
+
+  return (
+    <div className="App">
+      {mainComponent}
+    </div>
+    
     );
   }
 }
 
-export default App;
+  export default App;
+

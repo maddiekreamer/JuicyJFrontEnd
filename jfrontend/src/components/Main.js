@@ -29,6 +29,7 @@ function Main(props)  {
                   {createCategories}
                   <Button id="Nav-buttons" onClick={(event) => props.getData()}>All</Button>
                   <Button id="Nav-buttons">Contact</Button>
+                  <Button id="Nav-buttons">Admin</Button>
                 </ButtonGroup>
               </Col>
               <Col sm="9">
