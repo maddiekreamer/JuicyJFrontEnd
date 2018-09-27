@@ -56,6 +56,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.props.auth)
     let mainComponent = "";
     switch (this.props.location) {
       case "":
@@ -68,15 +69,14 @@ class App extends Component {
               data={this.state.data}
               selectCategory={this.selectCategory}
               getData={this.getData}
-              login={this.props.auth.login}
-            />
+              login={this.props.auth.login}/>
             <Footer />
           </div>
         );
         break;
       case "secret":
         mainComponent = this.props.auth.isAuthenticated() ? (
-          <Client {...this.props} data={this.state.data} />
+          <Client {...this.props} data={this.state.data} logout={this.props.auth.logout} />
         ) : (
           <Client data={[]} />
         );

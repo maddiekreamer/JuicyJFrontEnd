@@ -35,7 +35,7 @@ class Client extends Component {
   render() {
     return (
       <div>
-        <ClientHeader />
+        <ClientHeader logout={this.props.logout} />
         <div className="container text-center" id="Client-dropdown">
         <ClientDropdown createSelectItems={this.createSelectItems} change={this.change} />
         </div>
