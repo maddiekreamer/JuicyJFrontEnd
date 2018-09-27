@@ -35,7 +35,9 @@ class Client extends Component {
     return (
       <div>
         <ClientHeader />
+        <div className="container text-center" id="Client-dropdown">
         <ClientDropdown createSelectItems={this.createSelectItems} change={this.change} />
+        </div>
         <ClientForm productDetails={this.state.selectedObject} />
       </div>
     );

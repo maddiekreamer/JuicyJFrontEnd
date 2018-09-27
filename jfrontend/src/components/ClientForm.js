@@ -57,6 +57,7 @@ class ClientForm extends Component {
         description: ""
       })
     )
+    .then(setTimeout(function(){window.location.reload() }, 2000))
   }
 
   handleDelete = (e) => {
@@ -77,6 +78,7 @@ class ClientForm extends Component {
         description: "",
       })
     )
+    .then(setTimeout(function(){window.location.reload() }, 2000))
   }
 
   handleUpdate = (e) => {
@@ -99,15 +101,18 @@ class ClientForm extends Component {
         description: "",
       })
     )
+    .then(setTimeout(function(){window.location.reload() }, 2000))
   }
  
   render() {
 
     return (
         <Form className="m-5">
-          <h6>Add New Product</h6>
+        <div className="container text-center">
+          <Button className="mb-4" onClick={this.onClick}>Add Info</Button>
+          <h6 >Add/Update Product</h6>
+        </div>
           <FormGroup row>
-            <Button onClick={this.onClick}>Add Info</Button>
             <Col sm="8">
               <Label for="name" size="sm">Product</Label>
               <Input type="text" name="name" id="product" placeholder="Product" bsSize="sm" ref="product" value={this.state.name} onChange={this.handleChange}/>
@@ -135,14 +140,14 @@ class ClientForm extends Component {
             <Label for="description" size="sm">Description</Label>
             <Input type="textarea" name="description" id="description" bsSize="sm" ref="description" value={this.state.description} onChange={this.handleChange}/>
           </FormGroup>
-          <Button onClick={this.handleSubmitPost}>
+          <Button onClick={this.handleSubmitPost} className="m-4 bg-success">
             Add New Product
           </Button>
-          <Button onClick={this.handleDelete}>
-            Delete
-          </Button>
-          <Button onClick={this.handleUpdate}>
+          <Button onClick={this.handleUpdate} className="m-4 bg-warning">
             Update Product Info
+          </Button>
+          <Button onClick={this.handleDelete} className="m-5 bg-danger">
+            Delete
           </Button>
         </Form>
     )

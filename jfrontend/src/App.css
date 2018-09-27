@@ -64,13 +64,11 @@
 
 
 #button-size{
-    width:280px;
     margin:0 auto;
     margin-bottom: 5px;
 }
 
 #Card{
-    width:300px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.406);
     transition: 0.3s;
 }
@@ -107,9 +105,15 @@ img {
 
 .Client-logo {
     display: inline;
-    width: 30%;
+    width: 25%;
     padding: 5px;
 }
+
+#Client-dropdown{
+    margin-top: 50px;
+}
+
 #itemsForm  {
-    margin: 50px;
+    margin-bottom: -30px;
+    margin-top: 25px;
 }

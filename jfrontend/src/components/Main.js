@@ -23,7 +23,7 @@ function Main(props)  {
       <main>
           <Container>
             <Row>
-              <Col sm="3" className="Main-nav">
+              <Col md="3" className="Main-nav">
                 <ButtonGroup vertical className="Main-buttons">
                   <h3>Product Categories</h3>
                   {createCategories}

@@ -21,7 +21,7 @@ class App extends Component {
   
 
   getData = () => {
-    fetch("https://j-j-data.herokuapp.com/") 
+    return fetch("https://j-j-data.herokuapp.com/") 
     .then(result => result.json())
     .then(result => this.setState({
       data: result.data
@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   getCategories = () => {
-    fetch(`http://j-j-data.herokuapp.com/categories`)
+    return fetch(`http://j-j-data.herokuapp.com/categories`)
     .then(result => result.json())
     .then(result => this.setState({
       categories: result.data
@@ -37,7 +37,7 @@ class App extends Component {
   }
 
   selectCategory = (id) => {
-    fetch(`http://j-j-data.herokuapp.com/${id}`)
+    return fetch(`http://j-j-data.herokuapp.com/${id}`)
     .then(result => result.json())
     .then(result => this.setState({
       data: result.data
