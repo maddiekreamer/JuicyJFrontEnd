@@ -17,7 +17,11 @@ class Description extends Component {
 
         return (
             <div id={this.props.name}>
-                {this.props.data}
+            <ul>
+                <li>Price: ${this.props.data.price}</li>
+                <li>Quantity: {this.props.data.quantity}</li>
+                <li>{this.props.data.description}</li>
+            </ul>
             </div>
     )
     }

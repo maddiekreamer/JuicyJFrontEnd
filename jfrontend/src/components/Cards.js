@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Col} from 'reactstrap';
+import {Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button, Col} from 'reactstrap';
 import Description from "./Description.js"
 
 class Cards extends Component {
@@ -9,7 +10,7 @@ class Cards extends Component {
             data: [],
             hideSkill: false
         }
-        
+
     }
 
     handleChange = (event) => {
@@ -22,12 +23,12 @@ class Cards extends Component {
             <Col md="6">
                    <div className="card mb-4 box-shadow" id="Card" >
                    <div id="Card-image">
-                        <img className="card-img-top" src={this.props.list.image_URL} alt="Card_image" />
+                        <img className="card-img-top" src={this.props.list.image_URL} alt="Card image" />
                     </div>
                         <div className="card-body">
                             <p className="card-text">{this.props.list.name}</p>
                             <div className="d-flex justify-content-between align-items-center">
-                                <h6 className="text-muted">{this.state.hideSkill ? <Description data={this.props.list.description} name={this.props.list.name}/> : null}</h6>
+                                <h6 className="text-muted">{this.state.hideSkill ? <Description data={this.props.list} name={this.props.list.name}/> : null}</h6>
                             </div>
                         </div>
                 

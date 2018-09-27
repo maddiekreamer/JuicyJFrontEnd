@@ -14,7 +14,7 @@ const ClientHeader = () => {
               Admin
             </Col>
             <Col sm="4"></Col>
-            <Col sm="4" href="#" className="text-center mt-2">Home</Col>
+            <Col sm="4" className="text-center mt-2"><a href="./Main.js" className="text-white">Home</a></Col>
           </Row>
         </Container>
       </header>
