@@ -1,4 +1,4 @@
-```#Instructions```
+#Instructions
 ###install gsap: ```npm install gsap```
 ###install auth0: ```npm install --save auth0-js```
 
