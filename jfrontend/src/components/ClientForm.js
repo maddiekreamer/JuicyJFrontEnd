@@ -13,6 +13,7 @@ class ClientForm extends Component {
       image_URL: "",
       price: "",
       description: "",
+      id: ""
 
     }
   }
@@ -25,7 +26,8 @@ class ClientForm extends Component {
       categoryID: this.props.productDetails.categoryID,
       image_URL: this.props.productDetails.image_URL,
       price: this.props.productDetails.price,
-      description: this.props.productDetails.description
+      description: this.props.productDetails.description,
+      id: this.props.productDetails.id
     })
  
   }
@@ -58,11 +60,59 @@ class ClientForm extends Component {
         categoryID: "",
         image_URL: "",
         price: "",
-        description: ""
+        description: "",
+        id: ""
       })
     )
   }
 
+  handleDelete = (e) => {
+    e.preventDefault();
+    // const body = JSON.stringify(this.state);
+    console.log("client for state id", this.state.id)
+    
+    fetch(`https://j-j-data.herokuapp.com/${this.state.id}`, {
+      method: "DELETE",
+      mode: "cors",
+      headers: { "content-type": "application/json" }
+    })
+    .then(response => console.log(response))
+    .then(
+      this.setState({
+        name: "",
+        quantity: "",
+        categoryID: "",
+        image_URL: "",
+        price: "",
+        description: "",
+        id: ""
+      })
+    )
+  }
+
+  handleUpdate = (e) => {
+    e.preventDefault();
+    const body = JSON.stringify(this.state);
+    console.log("body ", body)
+    fetch(`https://j-j-data.herokuapp.com/${this.state.id}`, {
+      method: "PUT",
+      mode: "cors",
+      headers: { "content-type": "application/json" },
+      body: body
+    })
+    .then(response => console.log(response))
+    .then(
+      this.setState({
+        name: "",
+        quantity: "",
+        categoryID: "",
+        image_URL: "",
+        price: "",
+        description: "",
+        id: ""
+      })
+    )
+  }
  
   render() {
 
@@ -98,14 +148,18 @@ class ClientForm extends Component {
             <Label for="description" size="sm">Description</Label>
             <Input type="textarea" name="description" id="description" bsSize="sm" ref="description" value={this.state.description} onChange={this.handleChange}/>
           </FormGroup>
-          <Button type="submit" onClick={this.handleSubmitPost}>
+          <FormGroup>
+            <Label for="id" size="sm">id</Label>
+            <Input type="textarea" name="id" id="description" bsSize="sm" ref="id" value={this.state.id} onChange={this.handleChange}/>
+          </FormGroup>
+          <Button onClick={this.handleSubmitPost}>
             Add New Product
           </Button>
-          <Button onClick={this.handleSumbitPost}>
-            Update Product Info
-          </Button>
-          <Button>
+          <Button onClick={this.handleDelete}>
             Delete
+          </Button>
+          <Button onClick={this.handleUpdate}>
+            Update Product Info
           </Button>
 
         </Form>
