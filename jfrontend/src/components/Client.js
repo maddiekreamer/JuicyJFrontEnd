@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import ClientHeader from "./ClientHeader";
 import ClientForm from "./ClientForm";
 import "../App.css";
+import ClientDropdown from "./ClientDropdown"
+
 
 
 class Client extends Component {
@@ -32,22 +34,9 @@ class Client extends Component {
   render() {
     return (
       <div>
-        <header className="Client-head">
-          <ClientHeader />
-        </header>
-        <h1 className="text-center">
-          <img src={require("../Images/JuicyJlight.png")} className="Client-logo" alt="Logo"/>
-        </h1>
-        <h5>Select Item to Update or Delete</h5>
-        <form id="itemsForm">
-          <select onChange={this.change}>
-            <option defaultValue value="select">Select</option>
-            {this.createSelectItems()}
-          </select>  
-          
-        </form>      
+        <ClientHeader />
+        <ClientDropdown createSelectItems={this.createSelectItems} change={this.change} />
         <ClientForm productDetails={this.state.selectedObject} />
-
       </div>
     );
   }
