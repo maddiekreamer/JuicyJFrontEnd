@@ -21,6 +21,7 @@ class App extends Component {
   componentDidMount() {
     this.getData();
     this.getCategories();
+    this.selectCategory();
     this.props.auth.handleAuthentication();
   }
 

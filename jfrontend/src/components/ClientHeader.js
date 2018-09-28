@@ -14,8 +14,8 @@ const ClientHeader = (props) => {
               Admin
             </Col>
             <Col sm="3"></Col>
-            <Col sm="3" className="text-center mt-2"><a href="./Main.js" className="text-white">Home</a></Col>
-            <Col sm="3" className="text-center mt-2"><a href="https://wjoey13.auth0.com/v2/logout" onClick={props.logout} className="text-white">Logout</a></Col>
+            <Col sm="3" className="text-center mt-2"><a href="http://jjmart.surge.sh" className="text-white">Home</a></Col>
+            <Col sm="3" className="text-center mt-2"><a href="https://wjoey13.auth0.com/v2/logout?returnTo=http%3A%2F%2Fwww.jjmart.surge.sh&client_id=14S57jWfYQ2zdYZtC03aBZWyRV3SOWw6" onClick={props.logout} className="text-white">Logout</a></Col>
           </Row>
         </Container>
       </header>
