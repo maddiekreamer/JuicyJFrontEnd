@@ -8,7 +8,7 @@ export default class Auth {
     auth0 = new auth0.WebAuth({
         domain: 'wjoey13.auth0.com',
         clientID: '14S57jWfYQ2zdYZtC03aBZWyRV3SOWw6',
-        redirectUri: 'http://localhost:3000/Client',
+        redirectUri: 'http://jjmart.surge.sh/Client',
         audience: "https://wjoey13.auth0.com/userinfo",
         responseType: 'token id_token',
         scope: 'openid'
